@@ -14,7 +14,12 @@ def blog(request):
     context = {'team_news':team_news}
     return render(request,'blog.html', context )
 
-''' got to the detail page and send the id of the team chosen'''
+''' got to the detail page and send the id of the team chosen
+
+:param post: Gets info for specific id in db
+:param context: puts post in a format for html to read
+:return: displays context connect in the fromat defined by the detail html 
+'''
 def details(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     context =  {'post':post}
